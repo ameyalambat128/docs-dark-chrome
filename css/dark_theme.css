@@ -1,0 +1,568 @@
+/* Custom colors for the dark mode */
+:root {
+  --white-100: #f5f5f5;
+  --white-200: #ededed;
+  --white-300: #e3e3e3;
+  --gray-border: #505050;
+  --gray-50: #dddddd;
+  --gray-100: #474747;
+  --gray-200: #111;
+  --gray-300: #3a3a3a;
+  --gray-400: #111;
+  --gray-500: #111;
+  --gray-600: #171717;
+  --gray-900: #111;
+}
+
+/* element.style {
+  background-image: url(https://www.gstatic.com/images/icons/material/system/1x/add_white_24dp.png);
+} */
+/* Pop up windows */
+.docs-docos-activitybox,
+.docos-streampane-content,
+.docos-streampane-header {
+  background-color: var(--gray-300) !important;
+  border-color: var(--gray-300) !important;
+}
+
+/* Menu searching when toolbar is hidden */
+.docs-omnibox-input {
+  background-color: var(--gray-300) !important;
+  border: 1px solid var(--gray-900) !important;
+  color: var(--white-100) !important;
+}
+
+.docs-omnibox-input::placeholder {
+  color: var(--white-300) !important;
+}
+
+.ac-renderer {
+  background-color: var(--gray-300) !important;
+}
+
+.ac-active {
+  background-color: var(--gray-100) !important;
+}
+
+.ac-row > div > div > .docs-icon {
+  background-color: transparent !important;
+}
+
+/* Toolbar borders */
+.docs-gm #docs-toolbar-wrapper {
+  border-top: 1px solid var(--gray-border) !important;
+  border-bottom: 1px solid var(--gray-border) !important;
+}
+
+.docs-material .goog-toolbar-separator.goog-inline-block {
+  border-left: 1px solid var(--gray-border) !important;
+  /* margin: 0 3px !important; */
+}
+
+/* Menus for different toolbar options */
+.goog-menu,
+.goog-menuitem {
+  background-color: var(--gray-900) !important;
+  color: var(--white-100) !important;
+}
+
+.goog-menuitem-highlight > *,
+.goog-option > * {
+  color: var(--white-100) !important;
+  font-weight: bold !important;
+}
+
+/* Highlight option popup */
+
+.docs-toolbar-more-toolbar {
+  background-color: var(--gray-300) !important;
+}
+
+/* Icons for some toolbar options */
+.goog-menuitem-icon {
+  background-color: var(--gray-50) !important;
+  border-radius: 2px !important;
+}
+
+/* Navigation tab LEFT */
+.docs-navigation-tab-button {
+  filter: invert(100%) !important;
+}
+
+/* Navigation tab expanded */
+.navigation-widget {
+  background-color: var(--gray-900) !important;
+}
+
+#navigation-widget-hat-list-icon {
+  background-color: var(--gray-100) !important;
+  border-radius: 3px;
+}
+
+.navigation-widget-hat-title,
+.navigation-item-content {
+  color: var(--white-100) !important;
+}
+
+.goog-button-hover > * {
+  color: var(--gray-900) !important;
+  font-weight: bold !important;
+}
+
+.goog-button-hover > div.navigation-item-content {
+  color: var(--white-100) !important;
+}
+
+.navigation-widget-hat-close-button-icon {
+  background-color: var(--gray-50);
+  border-radius: 50%;
+}
+
+/* Top toolbar with File, Edit.. options */
+#docs-chrome {
+  background-color: var(--gray-900) !important;
+}
+
+/* Share, user pic.. wrapper */
+.docs-titlebar-buttons {
+  background-color: var(--gray-900) !important;
+}
+
+/* Comment button */
+#docs-docos-commentsbutton {
+  filter: invert(100%) !important;
+}
+
+.jfk-button-checked > .docs-icon,
+.jfk-button-active > .docs-icon {
+  filter: invert(100%) !important;
+}
+
+.docs-docos-activitybox {
+  background-color: var(--gray-300) !important;
+}
+
+.docos-new-comment-button {
+  height: auto !important;
+  background-color: var(--gray-900) !important;
+}
+
+.goog-flat-menu-button {
+  background-color: var(--gray-900) !important;
+}
+
+.docos-ns-caption-text {
+  color: var(--white-100);
+}
+
+/* The input for the document title */
+.docs-title-input,
+.docs-title-input-label {
+  background-color: var(--gray-900) !important;
+  color: var(--white-100) !important;
+}
+
+.docs-title-input:hover {
+  border-color: transparent !important;
+}
+
+.docs-parent-collections-container-folder-name,
+.docs-parent-collections-container-prefix,
+.docs-parent-collections-container-text {
+  color: var(--white-100);
+}
+
+/* Add to Drive icon next to input for document title*/
+#docs-folder {
+  filter: brightness(1.5) !important;
+}
+
+/* The star for saving the doc as favorite */
+#docs-star {
+  background-color: var(--gray-900);
+  border-radius: 5px;
+}
+
+/* The File, Edit.. options */
+.menu-button {
+  color: var(--white-200) !important;
+}
+
+.goog-control-hover,
+.goog-control-open {
+  color: var(--gray-900) !important;
+}
+
+/* Tool icon wrapper. undo, redo... */
+#docs-toolbar-wrapper {
+  background-color: var(--gray-900) !important;
+  border-top: 1px solid var(--gray-900) !important;
+  border-bottom: 1px solid var(--gray-900) !important;
+}
+
+/* Tool icons, undo, redo... */
+.goog-toolbar-button-inner-box {
+  filter: invert(100%) !important;
+}
+
+.goog-color-menu-button-indicator > div {
+  filter: invert(100%) !important;
+}
+
+.docs-toolbar-small-separator,
+.goog-toolbar-separator {
+  border: 1px solid var(--gray-900) !important;
+  background-color: var(--gray-900) !important;
+}
+
+.docs-icon-mode-edit {
+  filter: invert(100%) !important;
+}
+
+.docs-icon-bold {
+  filter: invert(100%) !important;
+}
+
+.docs-icon-bold {
+  filter: none !important;
+}
+
+.goog-toolbar-button-checked > div > div > div,
+.goog-toolbar-button-active > div > div > div {
+  filter: invert(100%) !important;
+}
+
+.goog-toolbar-toggle-button,
+.goog-toolbar-button {
+  background-color: var(--gray-900) !important;
+}
+
+.goog-toolbar-select {
+  background-color: var(--gray-900) !important;
+}
+
+.goog-toolbar-menu-button {
+  background-color: var(--gray-900) !important;
+}
+
+.goog-toolbar-menu-button-arrow-hidden {
+  background-color: var(--gray-900) !important;
+}
+
+.docs-icon-line-spacing {
+  filter: invert(100%) !important;
+}
+
+.docs-icon-image-type {
+  filter: invert(100%) !important;
+}
+
+.goog-toolbar-menu-button-open
+  > div
+  > div
+  > div
+  > div
+  > .docs-icon-line-spacing,
+.goog-toolbar-menu-button-open > div > div > div > div > .docs-icon-image-type {
+  filter: none !important;
+}
+
+.goog-toolbar-menu-button-hover
+  > div
+  > div
+  > div
+  > div
+  > .docs-icon-line-spacing {
+  filter: none !important;
+}
+
+/* Combo box input backgrounds*/
+.goog-toolbar-combo-button-caption {
+  background-color: var(--gray-900) !important;
+  color: var(--white-200) !important;
+}
+
+.goog-toolbar-menu-button-caption {
+  background-color: var(--gray-900) !important;
+  color: var(--white-200) !important;
+  text-align: center !important;
+}
+
+.goog-toolbar-menu-button-open > div > div > div > div > div > div {
+  filter: invert(100%) !important;
+}
+
+/* Combo boxes, zoom, image format... */
+#docs-toolbar-wrapper > .goog-inline-block {
+  background-color: var(--gray-50) !important;
+}
+
+/* Background for large combo boxes */
+.goog-toolbar-combo-button {
+  background-color: var(--gray-900) !important;
+}
+
+/* Combo box inputs */
+.goog-toolbar-combo-button-input {
+  color: var(--white-200) !important;
+}
+
+.goog-toolbar-combo-button-open > div > div > div > input {
+  color: var(--white-200) !important;
+  background-color: var(--gray-900) !important;
+}
+
+/* Drop down labels */
+.goog-menuitem-label,
+.docs-fonts-section-header,
+.docs-colormenuitems-custom-header {
+  color: var(--white-100) !important;
+}
+
+/* Last edited message */
+.docs-title-save-label-text {
+  color: var(--white-300) !important;
+}
+
+/* Background of the pages */
+.kix-appview-editor {
+  background-color: var(--gray-300) !important;
+}
+
+/* Toggleable sidebar RIGHT */
+.companion-app-switcher-container,
+.docs-companion-app-switcher-container {
+  background-color: var(--gray-900) !important;
+  border: none !important;
+}
+
+/* Toggeable sidebar RIGHT icons */
+.app-switcher-button-icon-container {
+  background-color: var(--gray-150) !important;
+}
+
+/* Explore sidebar RIGHT */
+.docs-explore-sidebar {
+  background-color: var(--gray-900) !important;
+}
+
+.docs-explore-sidebar > * {
+  background-color: var(--gray-900) !important;
+  color: var(--white-100) !important;
+}
+
+.docs-explore-sidebar-title {
+  border-top: 1px solid var(--gray-900);
+  border-color: var(--gray-900) !important;
+}
+
+.docs-explore-searchbar-labelinput,
+.docs-explore-searchbar-ac-row {
+  background-color: var(--gray-900) !important;
+  color: var(--white-100) !important;
+}
+
+.docs-explore-emptylist-title {
+  color: var(--white-100) !important;
+}
+
+/* Right side scrollbar */
+.docs-gm-sidebars ::-webkit-scrollbar-thumb {
+  background-color: var(--gray-900) !important;
+}
+
+/* Rulers */
+/* .docs-ruler {
+  background-color: var(--gray-900) !important;
+  border-bottom: 1px solid var(--gray-900) !important;
+} */
+
+.docs-gm .docs-horizontal-ruler {
+  background-color: var(--gray-100) !important;
+  border-bottom: 1px solid var(--gray-border) !important;
+}
+.docs-vertical-ruler {
+  border-right: 1px solid var(--gray-border) !important;
+}
+
+.docs-ruler-face {
+  background-color: var(--gray-900) !important;
+}
+
+.docs-ruler-face-minor-division,
+.docs-ruler-face-major-division {
+  background-color: var(--gray-900) !important;
+}
+
+.docs-ruler-face-number {
+  color: var(--white-100) !important;
+}
+
+/* Bottom left explore icon */
+.docs-explore-widget {
+  background-color: var(--gray-900) !important;
+}
+
+.docs-explore-icon > svg {
+  filter: invert(100%) !important;
+}
+
+.docs-explore-widget-text {
+  color: var(--white-100) !important;
+}
+
+/* Edit image options */
+.docs-tiled-sidebar,
+.docs-tiled-sidebar > div {
+  background-color: var(--gray-900) !important;
+}
+
+.docs-tiled-sidebar-header {
+  border-color: var(--gray-900) !important;
+}
+
+.docs-sidebar-header-text {
+  color: var(--white-100) !important;
+  font-weight: bold !important;
+}
+
+.docs-sidebar-tile-header {
+  background-color: var(--gray-300) !important;
+  color: var(--white-100) !important;
+}
+
+.docs-sidebar-tile-controls {
+  background-color: var(--gray-900) !important;
+  color: var(--white-100) !important;
+  padding-top: 15px !important;
+}
+
+.docs-material-gm-select-outer-box {
+  background-color: var(--gray-900) !important;
+  border-color: var(--gray-900) !important;
+  color: var(--white-100) !important;
+}
+
+.docs-image-effect-recolor-caption {
+  color: var(--white-100) !important;
+}
+
+.docs-sidebar-tile-label {
+  color: var(--white-100) !important;
+}
+
+.docs-image-effect-adjustment-reset-button {
+  transform: translateX(-50%);
+  left: 50%;
+  background-color: var(--gray-100) !important;
+  border-color: var(--gray-100) !important;
+  color: var(--gray-900) !important;
+}
+
+.navigation-widget-header {
+  color: var(--gray-150) !important;
+}
+
+.navigation-widget-hide-control-container {
+  filter: invert(100%) !important;
+}
+
+.kix-smart-summary-header-button > div.goog-inline-block,
+.docs-icon-img docs-icon-close-thin {
+  filter: invert(100%) !important;
+}
+
+.docs-titlebar-buttons.docs-titlebar-occluding::before {
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--gray-300) 20%,
+    var(--gray-900) 100%
+  ) !important;
+}
+
+/* Font size options */
+
+#fontSizeDecrement,
+#fontSizeSelect.docs-font-size-inc-dec-combobox,
+#fontSizeIncrement {
+  border-color: var(--gray-900) !important;
+}
+
+#fontSizeIncrement > div.goog-toolbar-button-outer-box {
+  border-left: 1px solid var(--gray-900) !important;
+}
+
+/* Meets icon */
+
+#docs-meet-in-editors-entrypointbutton {
+  border-color: var(--gray-900) !important;
+}
+
+/* Find and replace box */
+
+.docs-slidingdialog {
+  background-color: var(--gray-300) !important;
+  border-color: var(--gray-600) !important;
+}
+
+.docs-slidingdialog .jfk-button,
+.docs-slidingdialog .docs-slidingdialog-close-container {
+  filter: invert(100%) !important;
+  opacity: 1 !important;
+}
+
+.docs-slidingdialog .docs-findinput-container {
+  background-color: var(--gray-900) !important;
+  border-color: var(--gray-600) !important;
+}
+
+.docs-slidingdialog .docs-findinput-input {
+  color: var(--white-200);
+}
+
+.docs-slidingdialog .docs-findinput-input::placeholder,
+.docs-slidingdialog .docs-findinput-count {
+  color: var(--gray-150);
+}
+
+/* Page setup popup */
+
+.kix-pagesetupdialog-modal,
+.kix-pagesetupdialog-modal .modal-dialog-title,
+.kix-pagesetupdialog-modal .modal-dialog-content,
+.kix-pagesetupdialog-modal .modal-dialog-buttons,
+.kix-pagesetupdialog-modal .modal-dialog-title-text {
+  background-color: var(--gray-300) !important;
+  color: var(--white-200) !important;
+}
+
+.kix-pagesetupdialog-modal .goog-flat-menu-button {
+  background-color: var(--gray-900) !important;
+  border-color: var(--gray-900) !important;
+}
+
+.kix-pagesetupdialog-modal .goog-flat-menu-button-caption {
+  color: var(--white-300) !important;
+}
+
+.kix-pagesetupdialog-modal .goog-flat-menu-button-dropdown {
+  filter: invert(100%) !important;
+}
+
+.kix-pagesetupdialog-modal .modal-dialog-buttons button {
+  background-color: var(--gray-900);
+  border-color: var(--gray-600) !important;
+  color: var(--white-200);
+}
+
+.kix-pagesetupdialog-modal .modal-dialog-buttons button:hover {
+  background-color: var(--gray-900);
+  border-color: var(--gray-900) !important;
+  color: var(--white-200);
+}
+
+.kix-pagesetupdialog-modal .kix-pagesetupdialog-canvas-description-text,
+.kix-pagesetupdialog-modal .kix-pagesetupdialog-units {
+  color: var(--white-200);
+}
