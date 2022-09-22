@@ -1,27 +1,33 @@
 <!DOCTYPE html>
     <head>
         <meta charset="utf-8">
-        <title>Settings</title>
+        <title>Toggle</title>
         <link rel="stylesheet" href="popup.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="settings-wrapper">
-            <div class="icon sun"></div>
-            <div class="settings-container">
-                <label class="switch">
-                <input id="active-option" type="checkbox" checked="true">
-                <span class="slider round"></span>
-                </label>
-            </div>
-            <div class="icon moon"></div>
+        <div class="header">
+            <img src="icon.png" alt="icon" style="width: 1.5rem; object-fit: contain; padding-right: 0.5rem;">
+            <h3 class="text-hero">Google Docs Dark</h3>
         </div>
-
-        <br/>
+        
+        <div class="switch">
+            <input type="checkbox" id="toggle_checkbox" class="switch">
+            <label for="toggle_checkbox">
+                <div id="star">
+                    <div class="star" id="star-1">★</div>
+                    <div class="star" id="star-2">★</div>
+                </div>
+                <div id="moon"></div>
+            </label>                
+        </div>
         
         <div id="message">
             You need to enable javascript to run this extension, try enabling it following <a target="_blank" href="https://www.enable-javascript.com/#chrome">these instructions.</a>
         </div>
-        
+
         <script src="popup.js" charset="utf-8"></script>
     </body>
 </html>

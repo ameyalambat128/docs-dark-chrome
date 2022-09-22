@@ -1,6 +1,26 @@
 body {
   background-color: rgb(47, 47, 47);
+  /* background-color: aliceblue; */
   border-radius: 10px;
+  font-family: "Inter", sans-serif;
+  width: 10rem;
+  height: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.text-hero {
+  margin-top: 0;
+  margin-bottom: 4px;
+  color: white;
 }
 
 .icon {
@@ -10,18 +30,113 @@ body {
   background-position: center;
 }
 
-.moon {
-  background-image: url("./img/moon.png");
+/* Switch */
+.switch {
+  transform: scale(0.8);
 }
 
-.sun {
-  background-image: url("./img/sun.png");
+#toggle_checkbox {
+  display: none;
 }
+
+label {
+  display: block;
+  position: relative;
+  top: 50%;
+  right: 0;
+  left: 0;
+  width: 116px;
+  height: 56px;
+  margin: 0 auto;
+  background-color: #77b5fe;
+  border-radius: 56px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: 0.3s ease background-color;
+  overflow: hidden;
+}
+
+#star {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  width: 30px;
+  height: 30px;
+  background-color: #fafd0f;
+  transform: scale(1);
+  border-radius: 50%;
+  transition: 0.3s ease top, 0.3s ease left, 0.3s ease transform,
+    0.3s ease background-color;
+  z-index: 1;
+}
+
+#star-1 {
+  position: relative;
+}
+
+#star-2 {
+  position: absolute;
+  transform: rotateZ(36deg);
+}
+
+.star {
+  top: 0;
+  left: -7px;
+  font-size: 54px;
+  line-height: 28px;
+  color: #fafd0f;
+  transition: 0.3s ease color;
+}
+
+#moon {
+  position: absolute;
+  bottom: -52px;
+  right: 8px;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 0.3s ease bottom;
+}
+
+#moon:before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: -17px;
+  width: 40px;
+  height: 40px;
+  background-color: #03a9f4;
+  border-radius: 50%;
+  transition: 0.3s ease background-color;
+}
+
+#toggle_checkbox:checked + label {
+  background-color: #000;
+}
+
+#toggle_checkbox:checked + label #star {
+  top: 3px;
+  left: 64px;
+  transform: scale(0.3);
+  background-color: yellow;
+}
+
+#toggle_checkbox:checked + label .star {
+  color: yellow;
+}
+
+#toggle_checkbox:checked + label #moon {
+  bottom: 8px;
+}
+
+#toggle_checkbox:checked + label #moon:before {
+  background-color: #000;
+}
+/* end */
 
 #message {
-  color: rgb(248, 248, 248);
-  text-align: end;
-  margin: 5px 3px 0 0;
+  color: white;
 }
 
 a {
@@ -32,73 +147,6 @@ a {
 
 .settings-wrapper {
   background-color: rgb(253, 253, 253);
-  border-radius: 10px;
+  border-radius: 20px;
   display: flex;
-}
-
-.settings-wrapper > div {
-  margin: 5px;
-}
-
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-input:checked + .slider {
-  background-color: #2196f3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
 }

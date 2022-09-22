@@ -1,5 +1,5 @@
 {
-  "name": "Amprow Docs Dark",
+  "name": "Google Docs Dark",
   "action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html"
@@ -15,7 +15,6 @@
     "128": "icon_128.png"
   },
   "permissions": ["storage"],
-  "update_url": "https://clients2.google.com/service/update2/crx",
   "version": "0.0.12",
   "web_accessible_resources": [
     {
