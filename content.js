@@ -1,16 +1,16 @@
-var cssId = "darkModeStylesheet";
+let cssId = "darkThemeStyleSheet";
 try {
-  var head = document.getElementsByTagName("head")[0];
-  var link = document.createElement("link");
+  let head = document.getElementsByTagName("head")[0];
+  let link = document.createElement("link");
   link.id = cssId;
   link.rel = "stylesheet";
   link.type = "text/css";
   link.href = chrome.runtime.getURL("css/dark_theme.css");
   link.media = "all";
   head.appendChild(link);
-  console.log("Dark mode enabled successfully!");
+  console.log("Dark mode enabled!");
 } catch (err) {
-  console.log("Error while loading dark mode: ", err);
+  console.log("Error ", err);
 }
 
 chrome.storage.sync.get(["GDDM-active"], function (result) {
@@ -25,8 +25,8 @@ chrome.runtime.onMessage.addListener(function (message) {
   if (message === "true") {
     // If link is not there, add it
     if (!document.getElementById(cssId)) {
-      var head = document.getElementsByTagName("head")[0];
-      var link = document.createElement("link");
+      let head = document.getElementsByTagName("head")[0];
+      let link = document.createElement("link");
       link.id = cssId;
       link.rel = "stylesheet";
       link.type = "text/css";

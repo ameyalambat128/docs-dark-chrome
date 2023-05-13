@@ -1,5 +1,5 @@
 {
-  "name": "Amprow Docs Dark",
+  "name": "Docs Dark 2.0",
   "action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html"
@@ -10,13 +10,12 @@
       "matches": ["https://docs.google.com/document/*"]
     }
   ],
-  "description": "Dark mode for Google Docs!",
+  "description": "Dark Theme for Docs with high contrast!",
   "icons": {
     "128": "icon_128.png"
   },
   "permissions": ["storage"],
-  "update_url": "https://clients2.google.com/service/update2/crx",
-  "version": "0.0.12",
+  "version": "0.1.0",
   "web_accessible_resources": [
     {
       "matches": ["https://docs.google.com/*"],
