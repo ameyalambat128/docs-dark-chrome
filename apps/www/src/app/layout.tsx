@@ -13,13 +13,18 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://darkdocs.ameyalambat.com";
+const socialImageUrl = `${siteUrl}/og.png?v=2`;
+const screenshotUrl = `${siteUrl}/hero-alt.png`;
+const today = new Date().toISOString().split("T")[0];
+
 export const metadata: Metadata = {
   title: {
-    default: "Dark Docs 2.0 - The Dark Theme Google Forgot",
+    default: "Dark Docs 2.0 | Dark Theme for Google Docs",
     template: "%s | Dark Docs 2.0",
   },
   description:
-    "Transform your Google Docs experience with Dark Docs 2.0 - the beautiful dark theme extension that reduces eye strain and enhances productivity. Free browser extension for Chrome, Firefox, Edge & Opera with 4.8★ rating from 1000+ users.",
+    "Dark Docs 2.0 is a browser extension that brings a high-contrast dark theme to Google Docs for more comfortable writing and reading in Chrome, Firefox, Edge, and Opera.",
   keywords: [
     "Google Docs dark theme",
     "dark mode extension",
@@ -38,7 +43,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Ameya Lambat", url: "https://ameyalambat.com" }],
   creator: "Ameya Lambat",
-  publisher: "Dark Docs",
+  publisher: "Dark Docs 2.0",
   category: "Browser Extension",
   classification: "Productivity Tool",
   formatDetection: {
@@ -46,22 +51,22 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://darkdocs.ameyalambat.com"),
+  metadataBase: new URL(siteUrl),
   alternates: {
-    canonical: "https://darkdocs.ameyalambat.com",
+    canonical: siteUrl,
   },
   openGraph: {
-    title: "Dark Docs 2.0 - The Dark Theme Google Forgot",
+    title: "Dark Docs 2.0 | Dark Theme for Google Docs",
     description:
-      "Transform your Google Docs with a beautiful dark theme that reduces eye strain. Free extension with 4.8★ rating from 1000+ users. Available for all major browsers.",
-    url: "https://darkdocs.ameyalambat.com",
+      "Dark Docs 2.0 brings a polished dark theme to Google Docs with stronger contrast and a more comfortable reading experience.",
+    url: siteUrl,
     siteName: "Dark Docs 2.0",
     images: [
       {
-        url: "https://darkdocs.ameyalambat.com/og.png?v=2",
+        url: socialImageUrl,
         width: 1200,
         height: 630,
-        alt: "Dark Docs 2.0 extension preview showing Google Docs in dark mode",
+        alt: "Dark Docs 2.0 preview showing Google Docs in dark mode",
         type: "image/png",
       },
     ],
@@ -72,10 +77,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@ameyalambat",
     creator: "@ameyalambat",
-    title: "Dark Docs 2.0 - The Dark Theme Google Forgot",
+    title: "Dark Docs 2.0 | Dark Theme for Google Docs",
     description:
-      "Transform Google Docs with a beautiful dark theme. Free extension with 4.8★ rating. Reduces eye strain & enhances productivity. Available for all browsers.",
-    images: ["https://darkdocs.ameyalambat.com/og.png?v=2"],
+      "Dark Docs 2.0 adds a polished dark theme to Google Docs for easier reading, better contrast, and a more comfortable writing setup.",
+    images: [socialImageUrl],
   },
   robots: {
     index: true,
@@ -106,8 +111,8 @@ const jsonLd = {
   "@type": "SoftwareApplication",
   name: "Dark Docs 2.0",
   description:
-    "Transform your Google Docs experience with Dark Docs 2.0 - the beautiful dark theme extension that reduces eye strain and enhances productivity.",
-  url: "https://darkdocs.ameyalambat.com",
+    "Dark Docs 2.0 is a browser extension that adds a high-contrast dark theme to Google Docs for a more comfortable writing and reading experience.",
+  url: siteUrl,
   applicationCategory: "BrowserExtension",
   operatingSystem: "Chrome, Firefox, Edge, Opera",
   offers: {
@@ -116,13 +121,6 @@ const jsonLd = {
     priceCurrency: "USD",
     availability: "https://schema.org/InStock",
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.8",
-    ratingCount: "1000",
-    bestRating: "5",
-    worstRating: "1",
-  },
   author: {
     "@type": "Person",
     name: "Ameya Lambat",
@@ -130,14 +128,14 @@ const jsonLd = {
   },
   publisher: {
     "@type": "Organization",
-    name: "Dark Docs",
-    url: "https://darkdocs.ameyalambat.com",
+    name: "Dark Docs 2.0",
+    url: siteUrl,
   },
   datePublished: "2024-01-01",
-  dateModified: new Date().toISOString().split("T")[0],
+  dateModified: today,
   keywords:
     "Google Docs dark theme, dark mode extension, productivity tools, eye strain reduction",
-  screenshot: "https://darkdocs.ameyalambat.com/hero-alt.png",
+  screenshot: screenshotUrl,
   downloadUrl:
     "https://chromewebstore.google.com/detail/docs-dark-20/djmmkojigpkdagglmjjdjiddopgdchcn",
 };

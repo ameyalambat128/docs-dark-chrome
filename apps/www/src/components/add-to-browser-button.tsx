@@ -13,7 +13,7 @@ const browsers = [
   {
     name: "Firefox",
     icon: "/browser-icons/firefox.svg",
-    link: "https://addons.mozilla.org/",
+    link: "https://addons.mozilla.org/en-US/firefox/addon/dark-docs-2-0/",
     match: /Firefox/i,
   },
   {

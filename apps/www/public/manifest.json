@@ -1,7 +1,7 @@
 {
-  "name": "Dark Docs 2.0 - The Dark Theme Google Forgot",
+  "name": "Dark Docs 2.0",
   "short_name": "Dark Docs 2.0",
-  "description": "Transform your Google Docs experience with Dark Docs 2.0 - the beautiful dark theme extension that reduces eye strain and enhances productivity.",
+  "description": "Dark Docs 2.0 adds a high-contrast dark theme to Google Docs for more comfortable writing and reading.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#111010",
