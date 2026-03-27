@@ -13,6 +13,7 @@
   },
   "scripts": {
     "build": "turbo build",
+    "check": "pnpm --filter www lint && pnpm --filter www build",
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "turbo format",
