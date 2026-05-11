@@ -1,6 +1,6 @@
 {
   "name": "extension",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Dark Docs 2.0 Chrome Extension",
   "private": true,
   "main": "package.js",
@@ -9,6 +9,7 @@
     "dev": "node package.js",
     "clean": "rimraf dist releases",
     "lint": "eslint src/**/*.js",
+    "check": "pnpm lint && pnpm format:check",
     "format": "prettier --write src/**/*.{js,css,html}",
     "format:check": "prettier --check src/**/*.{js,css,html}"
   },

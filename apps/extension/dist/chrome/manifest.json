@@ -1,7 +1,7 @@
 {
   "name": "Dark Docs 2.0",
   "description": "Enhanced dark theme for Google Docs with customizable accent colors",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "manifest_version": 3,
   "icons": {
     "16": "icons/icon-16.png",

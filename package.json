@@ -1,6 +1,6 @@
 {
   "name": "dark-docs-monorepo",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Dark Docs 2.0 - Chrome extension and landing page",
   "private": true,
   "repository": {
@@ -42,12 +42,12 @@
   "author": "Ameya Lambat",
   "license": "MIT",
   "devDependencies": {
-    "turbo": "^2.3.3",
-    "rimraf": "^5.0.5"
+    "rimraf": "^5.0.5",
+    "turbo": "^2.3.3"
   },
   "engines": {
     "node": ">=18.0.0",
     "pnpm": ">=8.0.0"
   },
-  "packageManager": "pnpm@10.2.1"
+  "packageManager": "pnpm@11.0.9"
 }
