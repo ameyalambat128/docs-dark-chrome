@@ -1,4 +1,4 @@
-// Docs Dark 2.0 - Enhanced content script based on DocsAfterDark ideal sample
+// Docs Dark 2.0 - Enhanced content script based on darkdocs ideal sample
 
 /////////////
 // LOGGING //
@@ -7,16 +7,16 @@
 class log {
   static debug(...args) {
     return;
-    console.log("[DEBUG]", ...args);
+    console.log('[DEBUG]', ...args);
   }
   static info(...args) {
-    console.log("[INFO]", ...args);
+    console.log('[INFO]', ...args);
   }
   static warn(...args) {
-    console.log("\x1b[33m%s\x1b[0m", "[WARN]", ...args);
+    console.log('\x1b[33m%s\x1b[0m', '[WARN]', ...args);
   }
   static error(...args) {
-    console.log("\x1b[31m%s\x1b[0m", "[ERROR]", ...args);
+    console.log('\x1b[31m%s\x1b[0m', '[ERROR]', ...args);
   }
 }
 
@@ -27,14 +27,14 @@ class log {
 var browser_namespace;
 
 // PREFER BROWSER NAMESPACE OVER CHROME
-if (typeof browser != "undefined") {
+if (typeof browser != 'undefined') {
   log.debug('"BROWSER" NAMESPACE FOUND');
   browser_namespace = browser;
-} else if (typeof chrome != "undefined") {
+} else if (typeof chrome != 'undefined') {
   log.debug('"CHROME" NAMESPACE FOUND');
   browser_namespace = chrome;
 } else {
-  throw new Error("COULD NOT FIND BROWSER NAMESPACE");
+  throw new Error('COULD NOT FIND BROWSER NAMESPACE');
 }
 
 ///////////////////////
@@ -62,7 +62,7 @@ function set_storage(storage_object, value) {
 
 const head =
   document.head ||
-  document.getElementsByTagName("head")[0] ||
+  document.getElementsByTagName('head')[0] ||
   document.documentElement;
 const version = browser_namespace.runtime.getManifest().version;
 
@@ -74,58 +74,58 @@ const dark_mode_normal = 0;
 const dark_mode_eclipse = 1;
 
 const default_accent_hue = 88; // GREEN
-const default_background = "dark";
+const default_background = 'dark';
 const default_dark_mode = { variant: dark_mode_normal };
 
-const css_path = "css/";
+const css_path = 'css/';
 
 var mode;
 var dark_mode_options;
 var accent_color;
 
 // DO NOT ENABLE DARK MODE ON GOOGLE DOCS HOMEPAGE
-if (document.querySelector(".docs-homescreen-gb-container"))
-  throw new Error("NOT ENABLING DOCS DARK ON GOOGLE DOCS HOMEPAGE");
+if (document.querySelector('.docs-homescreen-gb-container'))
+  throw new Error('NOT ENABLING DOCS DARK ON GOOGLE DOCS HOMEPAGE');
 
-let cssId = "darkThemeStyleSheet";
+let cssId = 'darkThemeStyleSheet';
 
 function inject_css_file(file) {
-  let file_id = "docsdark_" + file.replace(".", "_");
+  let file_id = 'docsdark_' + file.replace('.', '_');
 
-  if (document.querySelector("#" + file_id)) return;
+  if (document.querySelector('#' + file_id)) return;
 
-  const css = document.createElement("link");
-  css.setAttribute("href", browser_namespace.runtime.getURL(css_path + file));
+  const css = document.createElement('link');
+  css.setAttribute('href', browser_namespace.runtime.getURL(css_path + file));
   css.id = file_id;
-  css.rel = "stylesheet";
+  css.rel = 'stylesheet';
 
   head.appendChild(css);
 }
 
 function remove_css_file(file) {
-  let file_id = "docsdark_" + file.replace(".", "_");
+  let file_id = 'docsdark_' + file.replace('.', '_');
 
-  if (document.querySelector("#" + file_id))
-    document.querySelector("#" + file_id).remove();
+  if (document.querySelector('#' + file_id))
+    document.querySelector('#' + file_id).remove();
 }
 
 function inject_dark_mode(dark_mode) {
   mode = mode_dark;
 
-  inject_css_file("dark_theme.css"); // BASE DARK MODE
+  inject_css_file('dark_theme.css'); // BASE DARK MODE
 
-  log.info("Dark mode enabled!");
+  log.info('Dark mode enabled!');
 }
 
 function remove_css_files() {
-  remove_css_file("dark_theme.css");
+  remove_css_file('dark_theme.css');
 }
 
 function remove_dark_mode() {
   mode = mode_off;
   remove_css_files();
 
-  if (document.querySelector("#" + cssId)) {
+  if (document.querySelector('#' + cssId)) {
     let linkToCSS = document.getElementById(cssId);
     linkToCSS.parentElement.removeChild(linkToCSS);
   }
@@ -135,7 +135,7 @@ function handle_mode() {
   if (mode == null) {
     // FIRST INVOCATION; ENABLE DEFAULT DARK MODE BY DEFAULT
     inject_dark_mode(default_dark_mode);
-    set_storage("mode", mode_dark);
+    set_storage('mode', mode_dark);
   } else if (mode == mode_dark) {
     inject_dark_mode(dark_mode_options);
   } else {
@@ -147,13 +147,13 @@ function handle_mode() {
 function update_accent_color(color) {
   accent_color = color;
   document.documentElement.style.setProperty(
-    "--docsafterdark-accent-hue",
+    '--darkdocs-accent-hue',
     color.hue
   );
 }
 
 function remove_accent_color() {
-  document.documentElement.style.removeProperty("--docsafterdark-accent-hue");
+  document.documentElement.style.removeProperty('--darkdocs-accent-hue');
 }
 
 /////////////////
@@ -162,10 +162,10 @@ function remove_accent_color() {
 
 browser_namespace.storage.sync.get(
   [
-    "mode",
-    "dark_mode",
-    "accent_color",
-    "GDDM-active", // Legacy support
+    'mode',
+    'dark_mode',
+    'accent_color',
+    'GDDM-active', // Legacy support
   ],
   function (data) {
     //////////
@@ -173,15 +173,15 @@ browser_namespace.storage.sync.get(
     //////////
 
     // Check legacy setting first
-    if (data["GDDM-active"] === "false") {
+    if (data['GDDM-active'] === 'false') {
       mode = mode_off;
-      set_storage("mode", mode_off);
+      set_storage('mode', mode_off);
     } else if (data.mode != null) {
       mode = data.mode;
     } else {
       // SET DEFAULT MODE
       mode = mode_dark;
-      set_storage("mode", mode);
+      set_storage('mode', mode);
     }
 
     ///////////////////
@@ -193,7 +193,7 @@ browser_namespace.storage.sync.get(
     } else {
       // SET DEFAULT DARK MODE OPTIONS
       dark_mode_options = { variant: dark_mode_normal };
-      set_storage("dark_mode", dark_mode_options);
+      set_storage('dark_mode', dark_mode_options);
     }
 
     //////////////////
@@ -201,20 +201,20 @@ browser_namespace.storage.sync.get(
     //////////////////
 
     if (data.accent_color != null) {
-      log.debug("FOUND SAVED ACCENT COLOR");
+      log.debug('FOUND SAVED ACCENT COLOR');
       accent_color = data.accent_color;
       update_accent_color(data.accent_color);
     } else {
-      log.debug("NO SAVED ACCENT COLOR FOUND");
+      log.debug('NO SAVED ACCENT COLOR FOUND');
       // SET DEFAULT ACCENT COLOR
       accent_color = { hue: default_accent_hue };
       update_accent_color(accent_color);
 
       // SAVE DEFAULT ACCENT COLOR
-      update_storage("accent_color", "hue", default_accent_hue);
+      update_storage('accent_color', 'hue', default_accent_hue);
     }
 
-    log.debug("ACCENT COLOR:", accent_color);
+    log.debug('ACCENT COLOR:', accent_color);
 
     /////////////////////
     // INVOKE HANDLERS //
@@ -259,8 +259,8 @@ browser_namespace.storage.onChanged.addListener(function (changes, area) {
   }
 
   // Legacy support
-  if (changes["GDDM-active"] != null) {
-    if (changes["GDDM-active"].newValue === "false") {
+  if (changes['GDDM-active'] != null) {
+    if (changes['GDDM-active'].newValue === 'false') {
       mode = mode_off;
       handle_mode();
     } else {
@@ -271,18 +271,16 @@ browser_namespace.storage.onChanged.addListener(function (changes, area) {
 });
 
 // LISTEN FOR MESSAGES FROM POPUP (Legacy support)
-browser_namespace.runtime.onMessage.addListener(function (
-  message,
-  sender,
-  sendResponse
-) {
-  if (message === "true") {
-    mode = mode_dark;
-    handle_mode();
-  } else if (message === "false") {
-    mode = mode_off;
-    handle_mode();
-  } else if (message.type == "setAccentColor") {
-    update_accent_color(message.color);
+browser_namespace.runtime.onMessage.addListener(
+  function (message, sender, sendResponse) {
+    if (message === 'true') {
+      mode = mode_dark;
+      handle_mode();
+    } else if (message === 'false') {
+      mode = mode_off;
+      handle_mode();
+    } else if (message.type == 'setAccentColor') {
+      update_accent_color(message.color);
+    }
   }
-});
+);

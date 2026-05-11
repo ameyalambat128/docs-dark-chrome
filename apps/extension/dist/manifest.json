@@ -30,6 +30,8 @@
     {
       "resources": [
         "assets/css/*.css",
+        "assets/replacements/*.png",
+        "assets/replacements/*.svg",
         "icons/icon.png",
         "icons/icon-128.png"
       ],
