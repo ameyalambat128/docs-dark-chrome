@@ -1,5 +1,5 @@
-// DocsAfterDark-style content script
-// Based on the exact approach from https://github.com/waymondrang/docsafterdark
+// darkdocs-style content script
+// Based on the exact approach from https://github.com/waymondrang/darkdocs
 
 /////////////
 // LOGGING //
@@ -65,6 +65,38 @@ function update_storage(storage_object, key, value) {
 /////////////
 
 const css_path = 'assets/css/';
+const replacement_url = (filename) =>
+  `url(${browser_namespace.runtime.getURL(`assets/replacements/${filename}`)})`;
+const fixed_theme_properties = {
+  '--checkmark': replacement_url('checkmark.secondary.png'),
+  '--darkdocs_checkmark': replacement_url('checkmark.secondary.png'),
+  '--darkdocs_revisions_sprite1': replacement_url(
+    'revisions_sprite1.secondary.svg'
+  ),
+  '--darkdocs_close_18px': replacement_url('close_18px.svg'),
+  '--darkdocs_lens': replacement_url('lens.svg'),
+  '--darkdocs_jfk_sprite186': replacement_url('jfk_sprite186.edited.png'),
+  '--darkdocs_dimension_highlighted': replacement_url(
+    'dimension-highlighted.edited.png'
+  ),
+  '--darkdocs_dimension_unhighlighted': replacement_url(
+    'dimension-unhighlighted.edited.png'
+  ),
+  '--darkdocs_access_denied': replacement_url('access_denied_transparent.png'),
+  '--darkdocs_access_denied_600': replacement_url(
+    'access_denied_600_transparent.png'
+  ),
+  '--darkdocs_gm_add_black_24dp': replacement_url('gm_add_black_24dp.png'),
+  '--darkdocs_accentHue': '217',
+  '--darkdocs_documentBackground': '#ffffff',
+  '--darkdocs_documentInvert': 'none',
+  '--darkdocs_documentBorder': '1px solid var(--primary-border-color)',
+  '--darkdocs-accent-hue': '217',
+  '--darkdocs_document_background': '#ffffff',
+  '--darkdocs_document_invert': 'none',
+  '--darkdocs_document_border': '1px solid var(--primary-border-color)',
+};
+const theme_classes = ['darkdocs_enabled', 'darkdocs_dark', 'darkdocs_normal'];
 
 // MODE CONSTANTS
 const mode_off = 0;
@@ -103,6 +135,26 @@ function remove_css_file(file) {
     document.querySelector('#' + file_id).remove();
 }
 
+function set_fixed_theme_options() {
+  Object.entries(fixed_theme_properties).forEach(([property, value]) => {
+    document.documentElement.style.setProperty(property, value);
+  });
+}
+
+function remove_fixed_theme_options() {
+  Object.keys(fixed_theme_properties).forEach((property) => {
+    document.documentElement.style.removeProperty(property);
+  });
+}
+
+function add_theme_classes() {
+  document.documentElement.classList.add(...theme_classes);
+}
+
+function remove_theme_classes() {
+  document.documentElement.classList.remove(...theme_classes);
+}
+
 /**
  * INJECTS DARK MODE CSS
  */
@@ -110,9 +162,11 @@ function inject_dark_mode() {
   mode = mode_dark;
 
   remove_css_file('light.css');
+  remove_css_file('dark_normal.css');
+  set_fixed_theme_options();
+  add_theme_classes();
 
   inject_css_file('docs.css');
-  inject_css_file('dark_normal.css'); // BASE DARK MODE
 
   log.info('Dark mode enabled!');
 }
@@ -140,6 +194,8 @@ function remove_css_files() {
 function remove_dark_mode() {
   mode = mode_off;
   remove_css_files();
+  remove_fixed_theme_options();
+  remove_theme_classes();
 
   log.info('Dark mode disabled!');
 }

@@ -1,4 +1,4 @@
-// Docs Dark 2.0 - Enhanced content script based on DocsAfterDark ideal sample
+// Docs Dark 2.0 - Enhanced content script based on darkdocs ideal sample
 
 /////////////
 // LOGGING //
@@ -147,13 +147,13 @@ function handle_mode() {
 function update_accent_color(color) {
   accent_color = color;
   document.documentElement.style.setProperty(
-    '--docsafterdark-accent-hue',
+    '--darkdocs-accent-hue',
     color.hue
   );
 }
 
 function remove_accent_color() {
-  document.documentElement.style.removeProperty('--docsafterdark-accent-hue');
+  document.documentElement.style.removeProperty('--darkdocs-accent-hue');
 }
 
 /////////////////
